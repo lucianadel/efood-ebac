@@ -14,8 +14,15 @@ export default function Restaurante() {
 
   return (
     <>
-      <RestaurantBanner image={restaurant.image} name={restaurant.name} />
+      <RestaurantBanner 
+        image={restaurant.capa} 
+        name={restaurant.titulo} 
+      />
+      
       <MenuList menu={restaurant.menu} />
     </>
   );
 }
+
+
+

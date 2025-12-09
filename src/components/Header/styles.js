@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderBar = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
-  padding: 16px 0;
+  padding: 24px 0; /* Aumentei a altura igual ao Figma */
 `;
 
 export const HeaderContent = styled.div`
@@ -13,15 +13,27 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   color: #fff;
   padding: 0 16px;
+  
+  /* No Figma, tudo fica alinhado verticalmente */
 `;
 
 export const Logo = styled.h1`
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;       /* Igual ao Figma */
+  font-weight: 700;      /* Peso forte */
+  color: #fff;
+  cursor: pointer;
 `;
 
-export const SubLogo = styled.span`
-  font-size: 14px;
-  font-weight: 300;
+export const Nav = styled.nav`
+  font-size: 18px;
+  font-weight: 500;
 `;
 
+export const NavLink = styled.a`
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
