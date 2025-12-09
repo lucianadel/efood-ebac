@@ -1,3 +1,21 @@
+import { useParams } from "react-router-dom";
+import { restaurants } from "../../services/data";
+import RestaurantBanner from "../../components/RestaurantBanner";
+import MenuList from "../../components/MenuList";
+
 export default function Restaurante() {
-  return <h1>Página do restaurante</h1>;
+  const { id } = useParams();
+
+  const restaurant = restaurants.find((item) => item.id === Number(id));
+
+  if (!restaurant) {
+    return <h1>Restaurante não encontrado</h1>;
+  }
+
+  return (
+    <>
+      <RestaurantBanner image={restaurant.image} name={restaurant.name} />
+      <MenuList menu={restaurant.menu} />
+    </>
+  );
 }
