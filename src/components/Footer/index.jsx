@@ -1,15 +1,34 @@
 import * as S from "./styles";
+import logo from "../../images/logo.png";
 
 export default function Footer() {
   return (
     <S.FooterWrapper>
-      <S.Logo>efood</S.Logo>
-      
+      <S.Logo src={logo} alt="efood" />
+
+      <S.SocialList>
+        <S.SocialItem aria-label="Instagram">
+          <S.Icon viewBox="0 0 448 512" aria-hidden="true">
+            <path d="M224 141c-63.6 0-115 51.4-115 115s51.4 115 115 115 115-51.4 115-115-51.4-115-115-115zm0 190c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm146-194c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zM398.8 80.2C381 62.4 356.5 52 331.3 52H116.7C91.5 52 67 62.4 49.2 80.2 31.4 98 21 122.5 21 147.7v214.6c0 25.2 10.4 49.7 28.2 67.5C67 447.6 91.5 458 116.7 458h214.6c25.2 0 49.7-10.4 67.5-28.2 17.8-17.8 28.2-42.3 28.2-67.5V147.7c0-25.2-10.4-49.7-28.2-67.5zm-22.6 282c0 12.7-5 24.7-14.1 33.8-9.1 9.1-21.1 14.1-33.8 14.1H116.7c-12.7 0-24.7-5-33.8-14.1-9.1-9.1-14.1-21.1-14.1-33.8V147.7c0-12.7 5-24.7 14.1-33.8 9.1-9.1 21.1-14.1 33.8-14.1h214.6c12.7 0 24.7 5 33.8 14.1 9.1 9.1 14.1 21.1 14.1 33.8z" />
+          </S.Icon>
+        </S.SocialItem>
+        <S.SocialItem aria-label="Facebook">
+          <S.Icon viewBox="0 0 320 512" aria-hidden="true">
+            <path d="M279.14 288l14.22-92.66h-88.91V140.13c0-25.35 12.42-50.06 52.24-50.06H295V6.26S259.5 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72V195.3H22.89V288h81.39v224h100.17V288z" />
+          </S.Icon>
+        </S.SocialItem>
+        <S.SocialItem aria-label="Twitter">
+          <S.Icon viewBox="0 0 512 512" aria-hidden="true">
+            <path d="M459.37 151.72c.32 4.54 0 9.1-.21 13.64C459.17 314.16 353.5 476.1 161.14 476.1c-59.57 0-114.68-17.22-161.14-47.1 8.44.97 16.9 1.38 25.42 1.38 49.4 0 94.82-16.76 130.89-45.29-46.19-.85-85.14-31.36-98.56-73.24 6.46.98 13.1 1.5 19.91 1.5 9.64 0 18.96-1.29 27.82-3.72-48.27-9.72-84.6-52.17-84.6-103.14v-1.32c14.19 7.9 30.37 12.67 47.62 13.23-28.18-18.84-46.76-50.97-46.76-87.38 0-19.3 5.19-37.36 14.3-52.91 51.9 63.67 129.3 105.47 216.47 109.98-1.77-7.72-2.69-15.76-2.69-24.03 0-58.12 47.11-105.23 105.23-105.23 30.25 0 57.58 12.74 76.77 33.14 23.92-4.7 46.36-13.44 66.67-25.5-7.85 24.57-24.52 45.16-46.25 58.17 21.26-2.54 41.5-8.2 60.34-16.56-14.1 21.07-31.9 39.64-52.4 54.55z" />
+          </S.Icon>
+        </S.SocialItem>
+      </S.SocialList>
+
       <S.Text>
-        A efood é uma plataforma para divulgação de estabelecimentos.  
-        A responsabilidade pela entrega, qualidade dos produtos e prazos é inteira dos restaurantes parceiros.
+        A efood é uma plataforma para divulgação de estabelecimentos, a
+        responsabilidade pela entrega, qualidade dos produtos é toda do
+        estabelecimento contratado.
       </S.Text>
     </S.FooterWrapper>
   );
 }
-
