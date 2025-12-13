@@ -1,66 +1,94 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding: 56px 0;
-  background-color: #fff5ee; /* fundo bege igual ao Figma */
+  padding: 56px 0 72px;
+  background-color: #fff2e7;
 `;
 
 export const Container = styled.div`
-  max-width: ${({ theme }) => theme.layout.maxWidth};
+  width: 100%;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 16px;
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas igual ao Figma */
-  gap: 32px;
+  grid-template-columns: repeat(3, 320px);
+  gap: 24px;
+  justify-content: center;
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr; /* responsivo */
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 320px);
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 `;
 
 export const Card = styled.div`
-  background-color: #ffffff; /* card deve ser branco, igual ao Figma */
-  border: 1px solid #eee;
-  border-radius: 8px;
-  overflow: hidden;
+  width: 320px;
+  min-height: 338px;
+  background: ${({ theme }) => theme.colors.primary};
+  color: #ffebd9;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px 12px;
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 220px; /* maior e igual ao Figma */
+  width: 304px;
+  height: 167px;
   object-fit: cover;
+  align-self: center;
 `;
 
 export const Content = styled.div`
-  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
 `;
 
 export const Name = styled.h3`
-  font-size: 20px;  /* igual ao Figma */
-  font-weight: 700;
-  margin-bottom: 12px; /* mais espaço */
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0;
+  color: #ffebd9;
 `;
 
 export const Desc = styled.p`
   font-size: 14px;
-  color: #555;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffebd9;
+  margin: 0;
 `;
 
 export const Price = styled.p`
   font-weight: 700;
-  margin-bottom: 12px;
+  margin: 0;
+  color: #ffebd9;
 `;
 
 export const Button = styled.button`
-  width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary};
-  padding: 10px 0;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: bold;
+  width: 304px;
+  height: 24px;
+  align-self: center;
+  background: #ffebd9;
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 0;
+  margin-top: auto;
 `;
