@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderBar = styled.header`
   position: relative;
@@ -35,8 +36,9 @@ export const HeaderContent = styled.div`
   font-weight: 900;
 `;
 
-export const HeaderLink = styled.span`
+export const HeaderLink = styled(Link)`
   color: ${({ theme }) => theme.colors.primary};
+  font-weight: 900;
 `;
 
 export const HeaderLogo = styled.img`

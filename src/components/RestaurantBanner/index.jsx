@@ -7,7 +7,7 @@ export default function RestaurantBanner({ restaurant, cartCount = 0 }) {
     <>
       <S.HeaderBar backgroundPattern={fundo}>
         <S.HeaderContent>
-          <S.HeaderLink>Restaurantes</S.HeaderLink>
+          <S.HeaderLink to="/">Restaurantes</S.HeaderLink>
           <S.HeaderLogo src={logo} alt="efood" />
           <S.HeaderCart>
             {cartCount} produto(s) no carrinho
