@@ -1,8 +1,11 @@
-import { restaurants } from "../../services/data";
 import RestaurantCard from "../RestaurantCard";
 import * as S from "./styles";
 
-export default function RestaurantList() {
+export default function RestaurantList({ restaurants = [] }) {
+  if (!restaurants.length) {
+    return null;
+  }
+
   return (
     <S.Section>
       <S.Container>

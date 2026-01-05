@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.article`
   position: relative;
   width: 472px;
-  height: 398px;
+  min-height: 398px;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -97,14 +97,13 @@ export const Description = styled.p`
 
 export const Button = styled.button`
   align-self: flex-start;
-  padding: 4px 12px;
-  min-width: 82px;
-  height: 24px;
+  padding: 8px 14px;
+  min-width: 96px;
   background: ${({ theme }) => theme.colors.primary};
   color: #ffebd9;
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
   text-align: center;
   border-radius: 0;
 `;

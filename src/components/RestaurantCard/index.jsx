@@ -8,6 +8,11 @@ export default function RestaurantCard({ restaurant }) {
     navigate(`/restaurante/${restaurant.id}`);
   };
 
+  const ratingNumber = Number(restaurant?.rating);
+  const ratingDisplay = Number.isFinite(ratingNumber)
+    ? ratingNumber.toFixed(1)
+    : "-";
+
   return (
     <S.Card>
       <S.ImageWrapper>
@@ -20,7 +25,7 @@ export default function RestaurantCard({ restaurant }) {
       <S.Content>
         <S.TopRow>
           <S.Name>{restaurant.name}</S.Name>
-          <S.Rating>{restaurant.rating.toFixed(1)}</S.Rating>
+          <S.Rating>{ratingDisplay}</S.Rating>
         </S.TopRow>
 
         <S.Description>{restaurant.description}</S.Description>
