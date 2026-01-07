@@ -6,7 +6,6 @@ import { getRestaurants } from "../../services/api";
 
 export default function Restaurante() {
   const { id } = useParams();
-  const [cartCount, setCartCount] = useState(0);
   const [restaurant, setRestaurant] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -40,10 +39,6 @@ export default function Restaurante() {
     };
   }, [id]);
 
-  const handleAddToCart = () => {
-    setCartCount((count) => count + 1);
-  };
-
   if (loading) {
     return <p style={{ textAlign: "center" }}>Carregando...</p>;
   }
@@ -54,8 +49,8 @@ export default function Restaurante() {
 
   return (
     <>
-      <RestaurantBanner restaurant={restaurant} cartCount={cartCount} />
-      <MenuList menu={restaurant.menu || []} onAdd={handleAddToCart} />
+      <RestaurantBanner restaurant={restaurant} />
+      <MenuList menu={restaurant.menu || []} />
     </>
   );
 }

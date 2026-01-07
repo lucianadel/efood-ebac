@@ -47,9 +47,12 @@ export const HeaderLogo = styled.img`
   object-fit: contain;
 `;
 
-export const HeaderCart = styled.span`
+export const HeaderCart = styled.button`
   color: ${({ theme }) => theme.colors.primary};
   text-align: right;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
 `;
 
 export const Banner = styled.section`

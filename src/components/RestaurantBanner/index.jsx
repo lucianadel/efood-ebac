@@ -1,15 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCart } from "../../store/cartSlice";
 import * as S from "./styles";
 import logo from "../../images/logo.png";
 import fundo from "../../images/fundo.png";
 
-export default function RestaurantBanner({ restaurant, cartCount = 0 }) {
+export default function RestaurantBanner({ restaurant }) {
+  const dispatch = useDispatch();
+  const cartCount = useSelector((state) => state.cart.items.length);
+
   return (
     <>
       <S.HeaderBar backgroundPattern={fundo}>
         <S.HeaderContent>
           <S.HeaderLink to="/">Restaurantes</S.HeaderLink>
           <S.HeaderLogo src={logo} alt="efood" />
-          <S.HeaderCart>
+          <S.HeaderCart
+            type="button"
+            onClick={() => dispatch(toggleCart())}
+            aria-label="Abrir carrinho"
+          >
             {cartCount} produto(s) no carrinho
           </S.HeaderCart>
         </S.HeaderContent>

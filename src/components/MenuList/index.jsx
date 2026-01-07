@@ -1,15 +1,16 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import ProductModal from "../ProductModal";
+import { addItem } from "../../store/cartSlice";
 import * as S from "./styles";
 
-export default function MenuList({ menu, onAdd }) {
+export default function MenuList({ menu }) {
   const [added, setAdded] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
+  const dispatch = useDispatch();
 
   const handleAdd = (item) => {
-    if (onAdd) {
-      onAdd(item);
-    }
+    dispatch(addItem(item));
     setAdded((prev) => ({ ...prev, [item.id]: true }));
     setSelectedItem(null);
     setTimeout(() => {
