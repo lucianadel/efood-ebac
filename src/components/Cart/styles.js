@@ -33,6 +33,62 @@ export const Items = styled.div`
   padding-right: 4px;
 `;
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const Label = styled.label`
+  color: #ffebd9;
+  font-size: 14px;
+  font-weight: 700;
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  background: #ffebd9;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 14px;
+
+  &:focus {
+    outline: 2px solid #ffd2ac;
+  }
+`;
+
+export const Row = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 420px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const SectionTitle = styled.h3`
+  margin: 0;
+  color: #ffebd9;
+  font-size: 16px;
+  font-weight: 700;
+`;
+
+export const InfoText = styled.p`
+  margin: 0;
+  color: #ffebd9;
+  font-size: 14px;
+  line-height: 1.4;
+`;
+
 export const Item = styled.div`
   background: #ffebd9;
   display: grid;
@@ -96,6 +152,29 @@ export const CheckoutButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
+`;
+
+export const SecondaryButton = styled.button`
+  width: 100%;
+  height: 24px;
+  border: 1px solid #ffebd9;
+  background: transparent;
+  color: #ffebd9;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
+`;
+
+export const ButtonStack = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const ErrorText = styled.p`
+  margin: 0;
+  color: #ffebd9;
+  font-size: 12px;
 `;
 
 export const Empty = styled.p`

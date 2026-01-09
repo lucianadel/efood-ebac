@@ -1,4 +1,5 @@
 const API_BASE = "https://fake-api-havokk.vercel.app/api/efood";
+const CHECKOUT_URL = "https://api-ebac.vercel.app/api/efood/checkout";
 
 const normalizeRestaurants = (data) => {
   const list = (() => {
@@ -37,4 +38,20 @@ export async function getRestaurants() {
 
   const json = await response.json();
   return normalizeRestaurants(json);
+}
+
+export async function checkoutOrder(payload) {
+  const response = await fetch(CHECKOUT_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    throw new Error(`Erro ao finalizar pedido: ${response.status}`);
+  }
+
+  return response.json();
 }
